@@ -33,24 +33,25 @@
   <packaging>bundle</packaging>
   <name>Spring Apache Directory Server Components</name>
 
-  <url>http://archiva.apache.org/redback/components/${project.artifactId}</url>
+  <properties>
+    <scmBrowseUrl>https://gitbox.apache.org/repos/asf?a=tree;p=archiva-redback-components-spring-apacheds.git</scmBrowseUrl>
+    <apacheds.version>1.5.1</apacheds.version>
+  </properties>
+  <scm>
+    <connection>scm:git:http://gitbox.apache.org/repos/asf/archiva-redback-components-spring-apacheds.git</connection>
+    <developerConnection>scm:git:https://gitbox.apache.org/repos/asf/archiva-redback-components-spring-apacheds.git</developerConnection>
+    <url>${scmBrowseUrl}</url>
+  </scm>
+
+
+  <url>${webUrl}/${project.artifactId}</url>
 
   <distributionManagement>
     <site>
       <id>apache.website</id>
-      <url>scm:svn:https://svn.apache.org/repos/asf/archiva/site-content/redback/components/${project.artifactId}</url>
+      <url>${siteUrl}/${project.artifactId}</url>
     </site>
   </distributionManagement>
-
-  <scm>
-    <connection>scm:svn:http://svn.apache.org/repos/asf/archiva/redback/redback-components/trunk/spring-apacheds/</connection>
-    <developerConnection>scm:svn:https://svn.apache.org/repos/asf/archiva/redback/redback-components/trunk/spring-apacheds/</developerConnection>
-    <url>http://svn.apache.org/viewvc/archiva/redback/redback-components/trunk/spring-apacheds/</url>
-  </scm>
-
-  <properties>
-    <apacheds.version>1.5.1</apacheds.version>
-  </properties>
 
   <dependencies>
     <dependency>
