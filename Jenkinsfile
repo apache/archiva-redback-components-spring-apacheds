@@ -26,7 +26,7 @@
 def labels = 'ubuntu'
 def buildJdk = 'JDK 1.8 (latest)'
 def buildMvn = 'Maven 3.5.2'
-def deploySettings = 'DefaultMavenSettingsProvider.1331204114925'
+def deploySettings = 'archiva-uid-jenkins'
 
 node(labels) {
 
@@ -55,4 +55,8 @@ node(labels) {
             sh "mvn deploy -Dmaven.test.skip=true -B -U -e -fae -Dmaven.compiler.fork=false"
         }
     }
+    
+    post {
+        cleanWs()
+    }    
 }
