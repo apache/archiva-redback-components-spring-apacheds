@@ -28,6 +28,11 @@ def buildJdk = 'JDK 1.8 (latest)'
 def buildMvn = 'Maven 3.5.2'
 def deploySettings = 'archiva-uid-jenkins'
 
+options {
+    disableConcurrentBuilds()
+    buildDiscarder(logRotator(numToKeepStr: '3', artifactNumToKeepStr: '2'))
+}
+
 node(labels) {
 
     cleanWs()
