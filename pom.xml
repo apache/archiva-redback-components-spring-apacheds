@@ -28,7 +28,6 @@
 
   <version>2.2-SNAPSHOT</version>
   <artifactId>spring-apacheds</artifactId>
-  <packaging>bundle</packaging>
   <name>Spring Apache Directory Server Components</name>
 
   <properties>
@@ -114,28 +113,5 @@
       <artifactId>log4j-jcl</artifactId>
       <scope>test</scope>
     </dependency>
-
   </dependencies>
-
-  <build>
-    <plugins>
-      <plugin>
-        <groupId>org.apache.felix</groupId>
-        <artifactId>maven-bundle-plugin</artifactId>
-        <configuration>
-          <instructions>
-            <Export-Package>
-              org.apache.archiva.redback.components.apacheds;version=${project.version};-split-package:=merge-first
-            </Export-Package>
-            <Import-Package>
-              javax.naming*,
-              org.apache.directory.server*;version="[1.5,2)",
-              org.slf4j;resolution:=optional
-            </Import-Package>
-          </instructions>
-        </configuration>
-      </plugin>
-    </plugins>
-  </build>
-
 </project>
